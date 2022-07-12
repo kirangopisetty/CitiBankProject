@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "d7b84bbd-cf10-4327-8370-df76028b980b",
+		"name": "IMAGES MODULE APIs",
+		"description": "This collection consists of *IMAGES* related **RESTful APIs** that uses ***GET*** http method. These APIs return the below responses from the server, when executed:\n\n1.  **JPEG**\n2.  **PNG**\n3.  **SVG**\n4.  **WEBP**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5040522"
+	},
+	"item": [
+		{
+			"name": "JPEG-API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/image/jpeg",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"jpeg"
+					]
+				},
+				"description": "This is a RESTful API that returns JPEG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "PNG-API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/image/png",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"png"
+					]
+				},
+				"description": "This is a RESTful API that returns PNG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "SVG-API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/image/svg",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"svg"
+					]
+				},
+				"description": "This is a RESTful API that returns SVG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "WEBP-API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/image/webp",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"webp"
+					]
+				},
+				"description": "This is a RESTful API that returns WEBP response from the server"
+			},
+			"response": []
+		}
+	]
+}

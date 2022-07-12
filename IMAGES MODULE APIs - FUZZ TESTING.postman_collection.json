@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "7c1a6294-4eae-4fb6-a860-9b8ad8f220ae",
+		"name": "IMAGES MODULE APIs - FUZZ TESTING",
+		"description": "This collection consists of *IMAGES* related **RESTful APIs** that uses ***GET*** http method. These APIs return the below responses from the server, when executed:\n\n1.  **JPEG**\n2.  **PNG**\n3.  **SVG**\n4.  **WEBP**",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5040522"
+	},
+	"item": [
+		{
+			"name": "JPEG-API",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://httpbin.org/image/jpeg",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"jpeg"
+					]
+				},
+				"description": "This is a RESTful API that returns JPEG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "PNG-API",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://httpbin.org/image/png",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"png"
+					]
+				},
+				"description": "This is a RESTful API that returns PNG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "SVG-API",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://httpbin.org/image/svg",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"svg"
+					]
+				},
+				"description": "This is a RESTful API that returns SVG response from the server"
+			},
+			"response": []
+		},
+		{
+			"name": "WEBP-API",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://httpbin.org/image/webp",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"image",
+						"webp"
+					]
+				},
+				"description": "This is a RESTful API that returns WEBP response from the server"
+			},
+			"response": []
+		}
+	]
+}

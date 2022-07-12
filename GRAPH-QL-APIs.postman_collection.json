@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "eba43f40-1bb7-43ff-aecb-b4f42c39b35f",
+		"name": "GRAPH-QL-APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5040522"
+	},
+	"item": [
+		{
+			"name": "SPACEX-API-1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if JSON response body is present & valid\", function () {\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test.skip(\"Verify if response body is present & valid\", function () {\r",
+							"    pm.response.to.have.body;\r",
+							"});\r",
+							"\r",
+							"if (pm.response.code==200) {\r",
+							"    postman.setNextRequest(\"SPACEX-API-2\");\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"SPACEX-API-1 failed\")\r",
+							"        postman.setNextRequest(\"\");\r",
+							"\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"user-agent": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "User-Agent",
+						"value": "{{$randomUserAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  company {\r\n    ceo\r\n    coo\r\n    cto\r\n    employees\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.spacex.land/graphql/",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spacex",
+						"land"
+					],
+					"path": [
+						"graphql",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SPACEX-API-2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if response body is present & valid\", function () {\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"if (pm.response.code==200) {\r",
+							"    postman.setNextRequest(\"GET CONTINENTS\");\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"SPACEX-API-2 failed\")\r",
+							"    postman.setNextRequest(\"\");\r",
+							"}\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  company {\r\n    founded\r\n    founder\r\n    headquarters {\r\n      address\r\n      city\r\n    }\r\n    name\r\n    summary\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.spacex.land/graph",
+					"protocol": "https",
+					"host": [
+						"api",
+						"spacex",
+						"land"
+					],
+					"path": [
+						"graph"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET CONTINENTS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if response body is present & valid\", function () {\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"if (pm.response.code==200) {\r",
+							"    postman.setNextRequest(\"GET CAPITAL DETAILS\");\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"GET CONTINENTS failed\")\r",
+							"        postman.setNextRequest(\"\");\r",
+							"\r",
+							"}\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  continents {\r\n    name\r\n    code\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET CAPITAL DETAILS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if response body is present & valid\", function () {\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"if (pm.response.code==200) {\r",
+							"    postman.setNextRequest(\"GET LANGUAGE DETAILS\");\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"GET CAPITAL DETAILS FAILED\")\r",
+							"        postman.setNextRequest(\"\");\r",
+							"\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  continents {\r\n    name\r\n    code\r\n    countries {\r\n      name\r\n      phone\r\n      capital\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET LANGUAGE DETAILS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Verify if response body is present & valid\", function () {\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"if (pm.response.code==200) {\r",
+							"    postman.setNextRequest(\"\");\r",
+							"}\r",
+							"else {\r",
+							"    console.log(\"GET LANGUAGE DETAILS failed\")\r",
+							"        postman.setNextRequest(\"\");\r",
+							"\r",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\r\n  continents {\r\n    name\r\n    code\r\n    countries {\r\n      name\r\n      currency\r\n      languages {\r\n        name\r\n      }\r\n    }\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://countries.trevorblades.com/",
+					"protocol": "https",
+					"host": [
+						"countries",
+						"trevorblades",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
